@@ -19,10 +19,6 @@ body {
   color: #fff;
 }
 
-p {
-  color: red;
-}
-
 .form__label {
   font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;

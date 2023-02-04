@@ -11,24 +11,25 @@
  </head>
 
  <body>
-    <form action="{% url "start" %}">
+    <form action="{% url "start" %}" method="post">
+    {% csrf_token %}
     <ul class="inputlist">
         <li>
             <div class="inputdiv"> 
-            <input type="text" class="inputbox" id="name" placeholder="Full name" required="" />
-            <label for="name" class="form__label">Full Name</label>
+            <input type="text" class="inputbox" id="name" name="name" placeholder="Full name" required="" />
+            <label for="name" class="form__label"></label>
           </div>
         </li>
         <li>
             <div class="inputdiv"> 
-            <input type="text" class="inputbox" id="name" placeholder="Age" required="" />
-            <label for="age" class="form__label">Age</label>
+            <input type="text" class="inputbox" id="name" name="age" placeholder="Age" required="" />
+            <label for="age" class="form__label"></label>
           </div>
         </li>
         <li>
             <div class="inputdiv"> 
-            <input type="text" class="inputbox" id="name" placeholder="Gender" required="" />
-            <label for="sex" class="form__label">Sex</label>
+            <input type="text" class="inputbox" id="name" name="sex" placeholder="Gender" required="" />
+            <label for="sex" class="form__label"></label>
           </div>
         </li>
         <li>

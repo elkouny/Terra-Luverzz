@@ -11,7 +11,7 @@ cap = cv2.VideoCapture(0)
 
 while True:
 
-    img = cv2.imread('multi_test_3.jpg')  # loaď image
+    img = cv2.imread('hana_crop_test.jpg')  # loaď image
     color_img_RGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     result = DeepFace.analyze(color_img_RGB, actions=['race'], enforce_detection=False)

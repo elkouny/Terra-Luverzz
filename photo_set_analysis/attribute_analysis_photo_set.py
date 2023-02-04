@@ -59,6 +59,19 @@ def dataListCreate(currentPath):
     return imageData
 
 
+def maleFemaleSplit(dataList):
+    maleList = []
+    femaleList= []
+    for imageAttribute in dataList:
+        if imageAttribute['gender'] == 'Man':
+            # male so add to male list
+            maleList.append(imageAttribute)
+        else:
+            femaleList.append(imageAttribute)
+    return maleList, femaleList
+
+
+
 # get current path
 currentPath = os.getcwd()
 print(currentPath)
@@ -70,7 +83,18 @@ while not imagesFolderExist:
     print("Error, no images directory")
     raise SystemExit(0)
 
-print(dataListCreate(currentPath))
+dataList = dataListCreate(currentPath)
+print(dataList)
+maleList, femaleList = maleFemaleSplit(dataList)
+print("Males")
+for list in maleList:
+    print(list)
+
+print("\nFemales")
+for list in femaleList:
+    print(list)
+
+
 
 
 

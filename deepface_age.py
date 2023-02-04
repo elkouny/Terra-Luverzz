@@ -7,7 +7,7 @@ from mtcnn import mtcnn
 import matplotlib.pyplot as plt
 import cv2
 import numpy as np
-imagePath = 'test_random_3.jpg'
+imagePath = 'james_test.jpg'
 faces = DeepFace.extract_faces(img_path=imagePath, target_size=(300,300) ,align=True, detector_backend='mtcnn')
 print(len(faces))
 for face in faces:

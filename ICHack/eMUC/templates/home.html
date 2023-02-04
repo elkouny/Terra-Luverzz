@@ -11,6 +11,7 @@
  </head>
 
  <body>
+    <form action="{% url "start" %}">
     <ul class="inputlist">
         <li>
             <div class="inputdiv"> 
@@ -21,13 +22,13 @@
         <li>
             <div class="inputdiv"> 
             <input type="text" class="inputbox" id="name" placeholder="Age" required="" />
-            <label for="name" class="form__label">Age</label>
+            <label for="age" class="form__label">Age</label>
           </div>
         </li>
         <li>
             <div class="inputdiv"> 
-            <input type="text" class="inputbox" id="name" placeholder="Sex" required="" />
-            <label for="name" class="form__label">Sex</label>
+            <input type="text" class="inputbox" id="name" placeholder="Gender" required="" />
+            <label for="sex" class="form__label">Sex</label>
           </div>
         </li>
         <li>
@@ -36,6 +37,6 @@
             </div>
         </li>
     </ul>
-
+  </form>
  </body>
 </html>

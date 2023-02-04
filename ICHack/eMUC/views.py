@@ -11,3 +11,6 @@ def pic_detail(request, pic_id):
     return render(request, 'pic_detail.html', {
         'pic': pic,
     })
+
+def start(request):
+    return render(request, 'start.html')

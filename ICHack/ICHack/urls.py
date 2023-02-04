@@ -20,5 +20,6 @@ from eMUC import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', views.home, name='home'),
+    path('eMUC/start/', views.start, name='start'),
     path('eMUC/<int:pic_id>', views.pic_detail, name='pic_detail')
 ]

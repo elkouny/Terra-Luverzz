@@ -9,4 +9,11 @@ class Picture(models.Model):
     sex = models.CharField(max_length=1, choices= SEX_CHOICES)
     ethnicity = models.CharField(max_length=100)
 
+class Person(models.Model):
+    SEX_CHOICES = [('M','Male'), ('F', 'Female')]
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    sex = models.CharField(max_length=1, choices= SEX_CHOICES)
+
+
 

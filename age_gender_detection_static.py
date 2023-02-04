@@ -2,6 +2,7 @@ import cv2
 import math
 import time
 import argparse
+from deepface import DeepFace
 
 # version designed around
 def getFaceBox(net, frame, conf_threshold=0.75):
@@ -37,7 +38,8 @@ genderProto = "gender_deploy.prototxt"
 genderModel = "gender_net.caffemodel"
 
 MODEL_MEAN_VALUES = (78.4263377603, 87.7689143744, 114.895847746)
-ageList = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
+#ageList = ['(0-2)', '(4-6)', '(8-12)', '(14-20)', '(21 - 24)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
+ageList = ['(0-14)', '(15-20)', '(21-25)', '(26-30)', '(31-35)', '(36-40)', '(45-100)']
 genderList = ['Male', 'Female']
 
 # load the network
@@ -58,9 +60,9 @@ while cv2.waitKey(1) < 0:
     #    break
 
     # get image to be analysed
-    img = cv2.imread('vids_test2.jpg')  # loaď image
-    frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
+    img = cv2.imread('hana_sat_test.jpg')  # loaď image
+    #frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    frame = img
     # creating a smaller frame for better optimization
     small_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
 
@@ -84,11 +86,21 @@ while cv2.waitKey(1) < 0:
         print("Age : {}, conf = {:.3f}".format(age, agePreds[0].max()))
 
         label = "{},{}".format(gender, age)
+
+        objs = DeepFace.analyze(frameFace, actions=['age', 'gender', 'race', 'emotion'])
+
+        print(objs)
+        print(objs[0]['age'])
+        print(objs[0]['dominant_gender'])
+        print(objs[0]['dominant_race'])
+        print(objs[0]['dominant_emotion'])
         cv2.putText(frameFace, label, (bbox[0], bbox[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 255, 255), 2,
                     cv2.LINE_AA)
         cv2.imshow("Age Gender Demo", frameFace)
 
-    print("time : {:.3f}".format(time.time() - t))
+        time.sleep(5000)
+
+    #print("time : {:.3f}".format(time.time() - t))
 
 
 

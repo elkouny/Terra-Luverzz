@@ -39,6 +39,11 @@ if not cap.isOpened():
 
 while True:
     ret, frame = cap.read()
-    emotion = emotionAnalysis(frame)
-    print(emotion)
-    time.sleep(1000)
+    try:
+        emotion = emotionAnalysis(frame)
+        print(emotion)
+    except:
+        print("No face")
+    time.sleep(5)
+    print("taking pic")
+    time.sleep(2)

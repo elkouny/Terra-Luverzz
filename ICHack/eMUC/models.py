@@ -7,7 +7,7 @@ class Person(models.Model):
     age = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     sex = models.CharField(max_length=1, choices= SEX_CHOICES)
     ethnicity = models.CharField(max_length=100)
-    height = models.DecimalField(null=True)
-    weight = models.DecimalField(null=True)
+    height = models.DecimalField(null=True, decimal_places=2, max_digits= 5)
+    weight = models.DecimalField(null=True, decimal_places=2, max_digits= 5)
 
 

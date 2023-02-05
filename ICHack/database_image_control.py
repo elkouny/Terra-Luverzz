@@ -11,7 +11,7 @@ import sqlite3
 # get current path
 currentPath = os.getcwd()
 print(currentPath)
-dbPath = currentPath + '\\ICHack\\db.sqlite3'
+dbPath = currentPath + '/db.sqlite3'
 connection = sqlite3.connect(dbPath)
 cursor = connection.cursor()
 
@@ -44,13 +44,13 @@ def imageAnalysis(imagePath):
 
 
 def dataListCreate(currentPath):
-    imageTypePath = currentPath + '\\*.jpg'
+    imageTypePath = currentPath + '/*.jpg'
     print("Image type path:", imageTypePath)
     fileLocations = glob.glob(imageTypePath)
     print(fileLocations)
     fileNames = []
     for file in fileLocations:
-        fileNames.append(file.split("\\")[-1])
+        fileNames.append(file.split("/")[-1])
 
     imageData = []
     for fileIndex in range(0, len(fileNames)):
@@ -96,7 +96,7 @@ def addImagesToDB(imagesPath, imageAttributeList, startMaxID):
         # start by incrementing id
         startMaxID += 1
         # get variables to add into database
-        imagePath = str(imagesPath + '\\' + image['fileName'])
+        imagePath = str(imagesPath + '/' + image['fileName'])
         print(imagePath)
         age = image['age']
         gender = image['gender']
@@ -111,7 +111,7 @@ def addImagesToDB(imagesPath, imageAttributeList, startMaxID):
 
 def addAll():
     # image file path testing
-    imagesPath = currentPath + '\\ICHack\\images'
+    imagesPath = currentPath + '/images'
     print(imagesPath)
     imagesFolderExist = os.path.exists(imagesPath)
     while not imagesFolderExist:
@@ -119,11 +119,11 @@ def addAll():
         raise SystemExit(0)
 
     print("Creating Data List")
-    dataList = dataListCreate(imagesPath)
-    ''' dataList = [{'fileName': 'Chris-Hemsworth.jpg',
+    #dataList = dataListCreate(imagesPath)
+    dataList = [{'fileName': 'Chris-Hemsworth.jpg',
                 'age': 24,
                 'gender': 'Man',
-                'race': 'white'}]'''
+                'race': 'white'}]
     print("Data List: ", dataList)
     maleList, femaleList = maleFemaleSplit(dataList)
     print("Males")

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3b92c1c-b7e4-45d8-afe1-9429e5905965" name="Changes" comment="Tidied up folder structure" />
+    <list default="true" id="c3b92c1c-b7e4-45d8-afe1-9429e5905965" name="Changes" comment="Tidied up folder structure">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICHack/database_image_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/ICHack/database_image_control.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICHack/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/ICHack/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ICHack/test.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ICHack/test.jpg" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/shaheerchaudry/Terra-Luverzz",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -184,13 +190,5 @@
     <MESSAGE value="added camera feed code for getting emotion" />
     <MESSAGE value="Tidied up folder structure" />
     <option name="LAST_COMMIT_MESSAGE" value="Tidied up folder structure" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Terra_Luverzz$race_pic.coverage" NAME="race_pic Coverage Results" MODIFIED="1675524030416" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Terra_Luverzz$deepface_test.coverage" NAME="deepface_test Coverage Results" MODIFIED="1675532576324" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Terra_Luverzz$deepface_emotion_camera.coverage" NAME="deepface_emotion_camera Coverage Results" MODIFIED="1675549196922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Terra_Luverzz$attribute_analysis_photo_set.coverage" NAME="attribute_analysis_photo_set Coverage Results" MODIFIED="1675556492891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/photo_set_analysis" />
-    <SUITE FILE_PATH="coverage/Terra_Luverzz$deepface_age.coverage" NAME="deepface_age Coverage Results" MODIFIED="1675551086476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Terra_Luverzz$age_gender_detection_static.coverage" NAME="age_gender_detection_static Coverage Results" MODIFIED="1675532781309" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

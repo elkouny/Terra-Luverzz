@@ -115,7 +115,7 @@ def score():
 
     return (escore * confidence * exval * 0.01)
 
-eth = ["Arab", "Pakisani", "Middle Eastern", "White", "Arab", "Black", "Asian", "Greek", "Macedonian"]
+eth = ["Arab", "Pakisani", "Middle Eastern", "White", "Arab F", "Black M", "Black F", "Asian", "Greek", "Macedonian"]
 res=[]
 for i in range(10):
     res.append(score())

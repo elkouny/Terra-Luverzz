@@ -34,6 +34,23 @@ The client device serves as a data middle mane, directing and reqesting data as 
 
 The client device will then analyse the responses, updating the scores for the categories of main indicators - age, ethnicity, and gender. There are scores for subcategories in these main indicators (e.g. different age ranges for age, and the different ethnicities for ethnicity). These scores are returned to the django database where it decides which image to provide to the client next. This cycle repeats for the 10 images the system is set to present before making its final conclusions.
 
+## Whats next?
+
+We have big plans for developing our dating system so that it is the most used app at Imperial!
+What’s next for eMUC?
+- Improved categorising of images:
+    - certain groups of people have lower than expected accuracy when their pictures are characterised. We would like to imrpove these models and characterising algorithms
+- Develop algorithms to allow peole with similar scores to be matched together, to help light the spark of new relationships
+- Develop models to dynamically assign score weightings for the emotion judgement 
+    – need training data to create models and this was outside of the scope of a 24 hour hackathon
+- Scaling out our system to the wider population
+    - we would need to expand our image database to cover a miuch wider range of people
+    - our infrastructure and resiliency would need improving to handle more users
+- We would like to get more response data from wearables
+    - target input responses would be respiration rate and body termperature
+    - we could have custom hardware designed for users to data for our system as accurately as possible
+    
+
 
 ## Requirements
 The python scripts require the following modules to be installed:
@@ -42,5 +59,5 @@ The python scripts require the following modules to be installed:
 - django DB
 
 
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=larcombius&hide=stars&count_private=true)
+
 

@@ -121,5 +121,5 @@ for i in range(10):
 maxi= max(res)
 ind= res.index(maxi)
 print("max score @ image no" + str(ind))
-# excitement(moving_average(get_samples(10)))
-# print(score())
+excitement(moving_average(get_samples(10)))
+print(score())

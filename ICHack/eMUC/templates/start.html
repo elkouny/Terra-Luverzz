@@ -1,2 +1,10 @@
-hello
-starting
+<html>
+    <body>
+    <p> LEAVING !!!</p>
+    <script>
+        var timer = setTimeout(function() {
+            window.location = "{% url "pic_detail" 1 %}"
+        }, 5000)
+    </script>
+    </body>
+</html>

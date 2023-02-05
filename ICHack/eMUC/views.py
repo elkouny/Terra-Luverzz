@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.http import Http404
 from .models import Person
 
 
@@ -8,7 +9,10 @@ def home(request):
     return render(request, 'home.html')
 
 def pic_detail(request, pic_id):
-    pic = Picture.objects.get(id=pic_id)
+    try:
+        pic = Picture.objects.get(id=pic_id)
+    except:
+        return Http404('pic not found')
     return render(request, 'pic_detail.html', {
         'pic': pic,
     })

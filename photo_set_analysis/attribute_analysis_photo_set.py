@@ -7,8 +7,6 @@ from deepface import DeepFace
 import cv2
 import numpy as np
 
-
-
 def imageAnalysis(imagePath):
     # function to analyse images. Returns dictionary with age, gender, race and emotion
     faces = DeepFace.extract_faces(img_path=imagePath, target_size=(300, 300), align=True, detector_backend='mtcnn')

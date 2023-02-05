@@ -1,10 +1,48 @@
 <html>
+
+ <head>
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" >
+ </head>
+
     <body>
     <p> LEAVING !!!</p>
+    <p id="sad">{{emotion}} - </p>
+ <p>Calibrating, Please Keep it  in your pants for:</p>
+    <p id="counter"></p>
     <script>
-        var timer = setTimeout(function() {
-            window.location = "{% url "pic_detail" 1 %}"
-        }, 5000)
+
+        // var timer = setTimeout(function() {
+        //     window.location = "{% url "pic_detail" 1 %}"
+        // }, 5000)
+        var countDownDate = 30;
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todassy's date and time
+  var now = new Date().getTime();
+   e = emotion;
+
+  // Find the distance between now and the count down date
+   countDownDate -=1;
+
+  // Time calculations for days, hours, minutes and seconds
+
+//   var seconds = Math.floor((countDownDate % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("counter").innerHTML = countDownDate + "s";
+    document.getElementById("counter").innerHTML = e;
+  // If the count down is over, write some text
+  if (countDownDate < 0) {
+    clearInterval(x);
+    document.getElementById("counter").innerHTML = "EXPIRED";
+  }
+}, 1000);
     </script>
     </body>
 </html>

@@ -1,1 +1,81 @@
-hello ! redirected :()
+<html>
+
+ <head>
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Main Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" >
+ </head>
+
+<!-- <body>-->
+<!-- {% for x in pic %}-->
+<!-- <img src="{% static 'images/ALKHATIB-OMAR-&#45;&#45;02109422.jpg' %}">-->
+<!--<img src="{{x.photo_path}}"/>-->
+
+<!-- <p>{{x.photo_path}}</p>-->
+<!--   {% endfor %}-->
+<!-- </body>-->
+
+<!-- <p>adsfas</p>-->
+<script type=“text/JavaScript”>
+<!–
+var picCount=0; // global
+var picArray=
+['images/ALKHATIB-OMAR---02109422.jpg','images/ARIF-JUNAID---02097215.jpg','images/AYYOUB-YAZAN---02120810.jpg','images/Chris-Hemsworth.jgp','images/KHALIL-HANA---02094641.jpg','images/MOHAMUD-HUSSEIN---02054042.jpg/,'images/MORRISON-TAHNI---02093429/,'images/TAY-TRACEY---02034209.jpg','images/DIONYSIOU-TINA---02094746.jpg/,'images/DIMOSKA-ANA---02061746.jpg/,'images/SIKLIGAR-VIDISHA---02025863','/imagesTOM-CLARKE.jpg','images/Photo-KFobelets--tojpeg_1575046470039_x1.jpg'];
+
+
+<!--//-->
+<!--// gets next picture in array-->
+<!--function nextPic()-->
+<!--{ // check if adding 1 exceeds number of pics in array-->
+<!--for(let i =0; picArray.length; i++){-->
+<!--document.getElementById("i").src = picArray[picCount];-->
+
+<!--    -->
+<!--}-->
+<!--// build the img to write to page using the new pic reference-->
+<!--var build=‘<img border=“0” src="{% static "’picArray[picCount]'" %}" width=“205” height=“100”>-->
+<!--';-->
+<!--document.getElementById(“imgHolder”).innerHTML=build;-->
+<!--document.getElementById("i").src = picArray[picCount];-->
+<!--document.getElementById(“g”).innerHTML=picCount;-->
+
+<!--// repeat this after a puse of 2000ms (2sec).-->
+<!--setTimeout(‘nextPic()’,2000)-->
+<!--}-->
+
+var i = 0;
+
+function nPic(i){
+    document.getElementById("i").src = picArray[i];
+    i++;
+    setTimeout(‘nextPic()’, 2000)
+    }
+//–>
+</script>
+<style type=“text/css”>
+<!–
+#imgHolder{ position:absolute; top:100px; left:100px; text-align:left; }
+
+.LgR { color:#F00; font-size:30px; font-weight:bold; line-height:130%; background-color:#FFF; }
+.a18B { color:#792D99; font-size:18px; font-weight:bold; background-color:#FFF; }
+–>
+</style>
+<title>Image Swap Static</title>
+</head>
+
+<body onload=“setTimeout(‘nextPic()’,2000)”>
+
+<div id=“imgHolder”>
+<!--<img src= “{% static 'images/ALKHATIB-OMAR-&#45;&#45;02109422.jpg' %}” width=“205” height=“100”>-->
+     <img id="i" src="{% static 'images/ALKHATIB-OMAR---02109422.jpg' %}">
+    <p id="g">sad</p>
+    <button onclick="nPic()">dsf</button>
+</div>
+
+</body>
+
+
+
+</html>

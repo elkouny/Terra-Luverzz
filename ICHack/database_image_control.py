@@ -57,9 +57,13 @@ def dataListCreate(currentPath):
         # goes through each file, recieves the response from the image analysis,
         # adds the attributes to a dictionary with the file name
         # adds to list of files
-        fileName = {'fileName': fileNames[fileIndex]}
-        fullAttributes = dict(fileName, **imageAnalysis(fileLocations[fileIndex]))
-        imageData.append(fullAttributes)
+        try:
+            fileName = {'fileName': fileNames[fileIndex]}
+            fullAttributes = dict(fileName, **imageAnalysis(fileLocations[fileIndex]))
+            imageData.append(fullAttributes)
+        except:
+            print("Failed on :")
+            print(fileNames[fileIndex])
 
     return imageData
 
@@ -119,11 +123,11 @@ def addAll():
         raise SystemExit(0)
 
     print("Creating Data List")
-    #dataList = dataListCreate(imagesPath)
-    dataList = [{'fileName': 'Chris-Hemsworth.jpg',
-                'age': 24,
-                'gender': 'Man',
-                'race': 'white'}]
+    dataList = dataListCreate(imagesPath)
+    # dataList = [{'fileName': 'Chris-Hemsworth.jpg',
+    #             'age': 24,
+    #             'gender': 'Man',
+    #             'race': 'white'}]
     print("Data List: ", dataList)
     maleList, femaleList = maleFemaleSplit(dataList)
     print("Males")

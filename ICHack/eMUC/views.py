@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import Http404
 from .models import Person
+import random
 
 
 from .models import Picture
@@ -9,12 +10,15 @@ def home(request):
     return render(request, 'home.html')
 
 def pic_detail(request, pic_id):
-    try:
-        pic = Picture.objects.get(id=pic_id)
-    except:
-        return Http404('pic not found')
+   count = 0
+    persons = []
+    """ while (count < 11):
+        number = random.randint(1,1113)
+        person = Person.objects.get(id=number)
+        persons.append(person)
+        count = count + 1 """
     return render(request, 'pic_detail.html', {
-        'pic': pic,
+        'persons': persons,
     })
 
 def start(request):

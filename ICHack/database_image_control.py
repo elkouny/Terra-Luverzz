@@ -19,9 +19,6 @@ cursor = connection.cursor()
 def imageAnalysis(imagePath):
     # function to analyse images. Returns dictionary with age, gender, race and emotion
     faces = DeepFace.extract_faces(img_path=imagePath, target_size=(300, 300), align=True, detector_backend='mtcnn')
-    print(len(faces))
-    for face in faces:
-        print(face)
     facialCoords = faces[0]['facial_area']
     img = cv2.imread(imagePath)
     blank = np.zeros(img.shape[:2], dtype='uint8')
@@ -36,7 +33,7 @@ def imageAnalysis(imagePath):
     objs = DeepFace.analyze(masked,
                             actions=['age', 'gender', 'race', 'emotion'
                                      ])[0]
-    print(objs)
+    #print(objs)
     response = {'age': objs['age'],
                 'gender': objs['dominant_gender'],
                 'race': objs['dominant_race'],
@@ -122,11 +119,11 @@ def addAll():
         raise SystemExit(0)
 
     print("Creating Data List")
-    #dataList = dataListCreate(imagesPath)
-    dataList = [{'fileName': 'Chris-Hemsworth.jpg',
+    dataList = dataListCreate(imagesPath)
+    ''' dataList = [{'fileName': 'Chris-Hemsworth.jpg',
                 'age': 24,
                 'gender': 'Man',
-                'race': 'white'}]
+                'race': 'white'}]'''
     print("Data List: ", dataList)
     maleList, femaleList = maleFemaleSplit(dataList)
     print("Males")

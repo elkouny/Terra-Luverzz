@@ -89,7 +89,7 @@ def moving_average(arr):
 
 
 def score():
-    exval = excitement(moving_average(get_samples(10)))
+    exval = excitement(moving_average(get_samples(6)))
     emotion, confidence = get_emotion()
 
     if (emotion == "angry"):  # happy
@@ -115,11 +115,11 @@ def score():
 
     return (escore * confidence * exval * 0.01)
 
+eth = ["Arab", "Pakisani", "Middle Eastern", "White", "Arab", "Black", "Asian", "Greek", "Macedonian"]
 res=[]
 for i in range(10):
     res.append(score())
 maxi= max(res)
 ind= res.index(maxi)
-print("max score @ image no" + str(ind))
-excitement(moving_average(get_samples(10)))
-print(score())
+print(f'max score @ image no {ind}' + eth[ind])
+

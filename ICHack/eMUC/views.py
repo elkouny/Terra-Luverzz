@@ -11,13 +11,14 @@ def home(request):
 
 def pic_detail(request, pic_id):
    count = 0
-    persons = []
-    """ while (count < 11):
+   persons = []
+   """ while (count < 11):
         number = random.randint(1,1113)
         person = Person.objects.get(id=number)
         persons.append(person)
         count = count + 1 """
-    return render(request, 'pic_detail.html', {
+
+   return render(request, 'pic_detail.html', {
         'persons': persons,
     })
 

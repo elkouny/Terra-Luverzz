@@ -93,16 +93,16 @@ def score():
     emotion, confidence = get_emotion()
 
     if (emotion == "angry"):  # happy
-        escore = -2
+        escore = 0.2
 
     elif (emotion == "disgust"):
-        escore = -1.5
+        escore = 0.4
 
     elif (emotion == "fear"):
-        escore = -1
+        escore = 0.5
 
     elif (emotion == "sad"):
-        escore = -0.5
+        escore = 0.6
 
     elif (emotion == "neutral"):
         escore = 1
@@ -115,5 +115,11 @@ def score():
 
     return (escore * confidence * exval * 0.01)
 
+res=[]
+for i in range(10):
+    res.append(score())
+maxi= max(res)
+ind= res.index(maxi)
+print("max score @ image no" + str(ind))
 # excitement(moving_average(get_samples(10)))
 # print(score())
